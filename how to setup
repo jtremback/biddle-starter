@@ -5,3 +5,5 @@ npm install --save-dev @nomiclabs/buidler-waffle ethereum-waffle chai @nomiclabs
 npm install --save-dev @nomiclabs/buidler
 npx buidler
 npx buidler test # Just to check if it works
+# Follow buidler typescript guide, modifying files etc
+npm install buidler-gas-reporter --save-dev
