@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "evm": "buidler node",
-    "test": "buidler test --network localhost"
+    "test": "buidler test --network localhost",
+    "typechain": "npx buidler typechain"
   },
   "author": "",
   "license": "None",
