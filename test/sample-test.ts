@@ -1,15 +1,23 @@
-const { expect } = require("chai");
+import chai from "chai";
 import { ethers } from "@nomiclabs/buidler";
+import { deployContract, getWallets, solidity } from "ethereum-waffle";
 
-describe("Greeter", function () {
-  it("Should return the new greeting once it's changed", async function () {
+// import GreeterArtifact from "../artifacts/Greeter.json";
+import { Greeter } from "../typechain/Greeter";
+
+chai.use(solidity);
+const { expect } = chai;
+
+describe("Greeter", function() {
+  let greeter: Greeter;
+  it("Should return the new greeting once it's changed", async function() {
     const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
+    greeter = (await Greeter.deploy("Hello, world!")) as Greeter;
 
     await greeter.deployed();
-    expect(await greeter.greet()).to.equal("Hello, world!");
+    expect(await greeter.functions.greet()).to.equal("Hello, world!");
 
-    await greeter.setGreeting("Hola, mundo!");
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
+    await greeter.functions.setGreeting("Hola, mundo!");
+    expect(await greeter.functions.greet()).to.equal("Hola, mundo!");
   });
 });

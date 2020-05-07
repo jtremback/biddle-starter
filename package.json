@@ -21,6 +21,14 @@
     "ethereum-waffle": "^2.5.0",
     "ethers": "^4.0.47",
     "ts-node": "^8.10.1",
+    "typechain": "^1.0.5",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "buidler-typechain": "0.0.5",
+    "ts-generator": "0.0.8",
+    "typechain-target-ethers": "^1.0.4",
+    "typechain-target-truffle": "^1.0.2",
+    "typechain-target-web3-v1": "^1.0.4"
   }
 }
